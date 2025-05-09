@@ -1,0 +1,15 @@
+insightface 
+imageio-ffmpeg 
+webcolors 
+segment-anything 
+numexpr 
+scikit-image
+ultralytics
+facexlib
+timm
+accelerate
+dill
+ftfy
+addict
+sageattention
+watchdog
