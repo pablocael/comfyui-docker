@@ -19,6 +19,12 @@ function clone_or_pull () {
     fi ;
 }
 
+python3 -m venv /root/python-env
+source /root/python-env/bin/activate
+
+# force install torch cuda 12.8
+pip3 install --force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
 echo "########################################"
 echo "[INFO] Downloading ComfyUI ..."
 echo "########################################"
@@ -102,6 +108,8 @@ clone_or_pull https://github.com/shingo1228/ComfyUI-SDXL-EmptyLatentImage.git
 clone_or_pull https://github.com/kijai/ComfyUI-WanVideoWrapper.git
 clone_or_pull https://github.com/willmiao/ComfyUI-Lora-Manager.git
 clone_or_pull https://github.com/hayden-fr/ComfyUI-Model-Manager.git
+clone_or_pull https://github.com/welltop-cn/ComfyUI-TeaCache.git
+clone_or_pull https://github.com/kijai/ComfyUI-FramePackWrapper.git
 
 
 echo "########################################"
@@ -133,21 +141,16 @@ for dir in "$PARENT_DIR"/*/; do
   fi
 done
 
+
+echo "########################################"
+echo "[INFO] Downloading Models"
+echo "########################################"
+# Downloading models
+bash /runner-scripts/download-models.sh
+
+
 echo "All done."
 
-
-
-echo "########################################"
-echo "[INFO] Downloading Models..."
-echo "########################################"
-
-cd /root/ComfyUI/models
-aria2c \
-  --input-file=/runner-scripts/download-models.txt \
-  --allow-overwrite=false \
-  --auto-file-renaming=false \
-  --continue=true \
-  --max-connection-per-server=5
 
 # Finish
 touch /root/.download-complete
