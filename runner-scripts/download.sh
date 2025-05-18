@@ -142,15 +142,19 @@ for dir in "$PARENT_DIR"/*/; do
 done
 
 
-echo "########################################"
-echo "[INFO] Downloading Models"
-echo "########################################"
-# Downloading models
-bash /runner-scripts/download-models.sh
+if  [[ -v SKIP_MODEL_DOWNLOAD ]]; then
+    echo "Skipping model download ..."
+else
+    echo "########################################"
+    echo "[INFO] Downloading Models"
+    echo "########################################"
+    # Downloading models
+    bash /runner-scripts/download-models.sh
+    # Finish
+    touch /root/.download-complete
+fi
 
 
 echo "All done."
 
 
-# Finish
-touch /root/.download-complete
