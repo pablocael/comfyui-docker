@@ -2,6 +2,9 @@
 
 set -e
 
+python3 -m venv /root/python-env
+source /root/python-env/bin/activate
+
 # Run user's set-proxy script
 cd /root
 if [ ! -f "/root/user-scripts/set-proxy.sh" ] ; then
@@ -19,6 +22,8 @@ cd /root
 if [ ! -f "/root/.download-complete" ] ; then
     chmod +x /runner-scripts/download.sh
     bash /runner-scripts/download.sh
+else
+    echo "All download steps have been completed before, skipping download step"
 fi ;
 
 # Run user's pre-start script
@@ -33,25 +38,9 @@ else
     source /root/user-scripts/pre-start.sh
 fi ;
 
-# echo "########################################"
-# echo "[INFO] Syncing Models..."
-# echo "########################################"
-cd ComfyUI
-aws s3 sync --size-only s3://ai-art-pce/ComfyUI/models models 
-
 echo "########################################"
 echo "[INFO] Starting ComfyUI..."
 echo "########################################"
 
-# Let .pyc files be stored in one place
-export PYTHONPYCACHEPREFIX="/root/.cache/pycache"
-# Let PIP install packages to /root/.local
-export PIP_USER=true
-# Add above to PATH
-export PATH="${PATH}:/root/.local/bin"
-# Suppress [WARNING: Running pip as the 'root' user]
-export PIP_ROOT_USER_ACTION=ignore
-
 cd /root
-
 python3 ./ComfyUI/main.py --listen --port 8188 ${CLI_ARGS}

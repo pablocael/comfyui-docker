@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+set -euox pipefail
 
 # Regex that matches REPO_NAME
 # First from pattern [https://example.com/xyz/REPO_NAME.git] or [git@example.com:xyz/REPO_NAME.git]
@@ -19,11 +19,7 @@ function clone_or_pull () {
     fi ;
 }
 
-python3 -m venv /root/python-env
 source /root/python-env/bin/activate
-
-# force install torch cuda 12.8
-pip3 install --force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
 echo "########################################"
 echo "[INFO] Downloading ComfyUI ..."
@@ -153,7 +149,6 @@ else
     # Finish
     touch /root/.download-complete
 fi
-
 
 echo "All done."
 

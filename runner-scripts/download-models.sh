@@ -18,21 +18,24 @@ wget https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_
 
 echo "Downloading WAN T2V Video Models..."
 mkdir -p /root/ComfyUI/models/diffusion_models/WAN/T2V
+cd /root/ComfyUI/models/diffusion_models/WAN/T2V
 wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-T2V-14B_CausVid_fp8_e4m3fn.safetensors
 
 echo "Downloading WAN I2V Video Models..."
 mkdir -p /root/ComfyUI/models/diffusion_models/WAN/I2V
-wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-I2V-14B-720P_fp8_e5m2.safetensors
+cd /root/ComfyUI/models/diffusion_models/WAN/I2V
+wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-T2V-14B_fp8_e4m3fn.safetensors
 
 
 echo "Downloading Hunyuan VAEs ..."
-mkdir /root/ComfyUI/models/vae/HV/
+mkdir -p /root/ComfyUI/models/vae/HV/
 cd /root/ComfyUI/models/vae/HV/
 wget https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors 
 wget https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_fp32.safetensors
 
 echo "Downloading WAN VAEs ..."
-mkdir /root/ComfyUI/models/vae/WAN/
+mkdir -p /root/ComfyUI/models/vae/WAN/
+cd /root/ComfyUI/models/vae/WAN/
 wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1_VAE_fp32.safetensors
 
 
@@ -41,6 +44,7 @@ cd /root/ComfyUI/models/clip/
 wget https://huggingface.co/calcuis/hunyuan-gguf/resolve/main/llava_llama3_fp8_scaled.safetensors
 wget https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors
 wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-fp8_e4m3fn.safetensors
+wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-bf16.safetensors
 
 echo "Downloading SDXL models ..."
 mkdir /root/ComfyUI/models/checkpoints/SDXL/
