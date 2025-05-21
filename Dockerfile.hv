@@ -1,0 +1,13 @@
+FROM pablocael/comfyui-base:latest
+SHELL ["/bin/bash", "-c"]
+
+USER root
+VOLUME /root
+WORKDIR /root
+
+COPY ./models/loras/HV/ /models/loras/HV/
+ENV USE_HUNYUAN_MODELS=1
+
+EXPOSE 8188
+ENV CLI_ARGS=""
+CMD ["bash","/entrypoint.sh"]

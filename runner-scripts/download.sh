@@ -63,6 +63,7 @@ clone_or_pull https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 clone_or_pull https://github.com/rgthree/rgthree-comfy.git
 clone_or_pull https://github.com/shiimizu/ComfyUI_smZNodes.git
 clone_or_pull https://github.com/WASasquatch/was-node-suite-comfyui.git
+ clone_or_pull https://github.com/Gourieff/ComfyUI-ReActor
 
 # Control
 clone_or_pull https://github.com/cubiq/ComfyUI_InstantID.git
@@ -93,19 +94,24 @@ clone_or_pull https://github.com/pythongosssss/ComfyUI-WD14-Tagger.git
 clone_or_pull https://github.com/SLAPaper/ComfyUI-Image-Selector.git
 clone_or_pull https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git
 clone_or_pull https://github.com/M1kep/ComfyLiterals
-clone_or_pull https://github.com/facok/ComfyUI-HunyuanVideoMultiLora.git
 clone_or_pull https://github.com/Jonseed/ComfyUI-Detail-Daemon.git
 clone_or_pull https://github.com/yolain/ComfyUI-Easy-Use.git
 clone_or_pull https://github.com/aria1th/ComfyUI-LogicUtils.git
 clone_or_pull https://github.com/ServiceStack/comfy-asset-downloader.git
-clone_or_pull https://github.com/facok/ComfyUI-TeaCacheHunyuanVideo.git
 clone_or_pull https://github.com/TTPlanetPig/Comfyui_TTP_Toolset.git
 clone_or_pull https://github.com/shingo1228/ComfyUI-SDXL-EmptyLatentImage.git
-clone_or_pull https://github.com/kijai/ComfyUI-WanVideoWrapper.git
 clone_or_pull https://github.com/willmiao/ComfyUI-Lora-Manager.git
-clone_or_pull https://github.com/hayden-fr/ComfyUI-Model-Manager.git
 clone_or_pull https://github.com/welltop-cn/ComfyUI-TeaCache.git
 clone_or_pull https://github.com/kijai/ComfyUI-FramePackWrapper.git
+
+if [[ -v USE_WAN_MODELS ]]; then
+    clone_or_pull https://github.com/kijai/ComfyUI-WanVideoWrapper.git
+fi
+
+if [[ -v USE_HUNYUAN_MODELS ]]; then
+    clone_or_pull https://github.com/facok/ComfyUI-HunyuanVideoMultiLora.git
+    clone_or_pull https://github.com/facok/ComfyUI-TeaCacheHunyuanVideo.git
+fi
 
 
 echo "########################################"
