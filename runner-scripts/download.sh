@@ -19,7 +19,13 @@ function clone_or_pull () {
     fi ;
 }
 
+python3 -m venv /root/python-env
 source /root/python-env/bin/activate
+
+echo "########################################"
+echo "[INFO] Installing CUDA ..."
+echo "########################################"
+pip3 install --force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
 echo "########################################"
 echo "[INFO] Downloading ComfyUI ..."
@@ -103,6 +109,10 @@ clone_or_pull https://github.com/shingo1228/ComfyUI-SDXL-EmptyLatentImage.git
 clone_or_pull https://github.com/willmiao/ComfyUI-Lora-Manager.git
 clone_or_pull https://github.com/welltop-cn/ComfyUI-TeaCache.git
 clone_or_pull https://github.com/kijai/ComfyUI-FramePackWrapper.git
+clone_or_pull https://github.com/orssorbit/ComfyUI-wanBlockswap.git
+
+# GGUF support
+clone_or_pull https://github.com/city96/ComfyUI-GGUF.git
 
 if [[ -v USE_WAN_MODELS ]]; then
     clone_or_pull https://github.com/kijai/ComfyUI-WanVideoWrapper.git
