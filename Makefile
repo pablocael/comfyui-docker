@@ -3,7 +3,7 @@ prepare:
 	rsync -r --progress ~/Dropbox/Files/ComfyUI/models ./models/
 
 cleanup:
-	rm -rf models
+	rm -rf ./models
 
 sdxl: prepare
 	@echo "Building SDXL container..."
