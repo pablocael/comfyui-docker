@@ -1,5 +1,5 @@
 # ----- Base stage -----
-FROM nvidia/cuda:12.8.0-runtime-ubuntu22.04 AS base
+FROM nvidia/cuda:12.8.0-runtime-ubuntu22.04
 SHELL ["/bin/bash", "-c"]
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -15,15 +15,12 @@ RUN rm -rf /var/lib/{apt,dpkg,cache,log}/
 COPY runner-scripts/.  /runner-scripts/
 COPY entrypoint.sh /entrypoint.sh
 
-FROM scratch AS sdxl_models
 COPY --from=models_path ./models/loras/SDXL/ /models/loras/SDXL/
-
-# ----- Final stage -----
-FROM base AS final
+COPY --from=models_path ./models/loras/WAN/ /models/loras/WAN/
 
 ENV USE_SDXL_MODELS="true"
 ENV USE_HV_MODELS="false"
-ENV USE_WAN_MODELS="false"
+ENV USE_WAN_MODELS="true"
 ENV USE_FLUX_MODELS="false"
 
 

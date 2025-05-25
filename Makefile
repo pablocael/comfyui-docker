@@ -1,34 +1,34 @@
 
 prepare:
-	rsync -r --progress ~/Dropbox/Files/ComfyUI/models ./models/
+	echo "Preparing build context..."
 
 cleanup:
-	rm -rf ./models
+	echo "Cleaning ..."
 
 sdxl: prepare
 	@echo "Building SDXL container..."
-	docker build --build-arg use_sdxl_models=true -t pablocael/comfyui-sdxl:latest -f Dockerfile .
-	cleanup
+	docker build --build-context models_path=${HOME}/Dropbox/Files/ComfyUI -t pablocael/comfyui-sdxl:latest -f Dockerfile.sdxl .
+	$(cleanup)
 
 swan: prepare
 	@echo "Building WAN container..."
-	docker build --build-arg use_wan_models=true -t pablocael/comfyui-wan:latest -f Dockerfile .
-	cleanup
+	docker build --build-arg use_wan_models=true --build-context models_path=${HOME}/Dropbox//Files/ComfyUI -t pablocael/comfyui-wan:latest -f Dockerfile.wan .
+	$(cleanup)
 
 sdxl-wan: prepare
 	@echo "Building SDXL WAN container..."
-	docker build --build-arg use_sdxl_models=true --build-arg use_wan_models=true -t pablocael/comfyui-sdxl-wan:latest -f Dockerfile .
-	cleanup
+	docker build --build-context models_path=${HOME}/Dropbox/Files/ComfyUI -t pablocael/comfyui-sdxl-wan:latest -f Dockerfile.sdxlwan .
+	$(cleanup)
 
 hv: prepare
 	@echo "Building HUNYUAN container..."
-	docker build --build-arg use_hv_models=true -t pablocael/comfyui-hunyuan:latest -f Dockerfile .
-	cleanup
+	docker build --build-context models_path=${HOME}/Dropbox/Files/ComfyUI -t pablocael/comfyui-hunyuan:latest -f Dockerfile.hv .
+	$(cleanup)
 
 flux: prepare
 	@echo "Building FLUX container..."
-	docker build --build-arg use_flux_models=true -t pablocael/comfyui-flux:latest -f Dockerfile .
-	cleanup
+	docker build --build-arg --build-context models_path=${HOME}/Dropbox/Files/ComfyUI -t pablocael/comfyui-flux:latest -f Dockerfile.flux .
+	$(cleanup)
 
 
 # push container based on name passed by argument

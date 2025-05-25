@@ -1,13 +1,30 @@
-FROM pablocael/comfyui-base:latest
+FROM nvidia/cuda:12.8.0-runtime-ubuntu22.04
 SHELL ["/bin/bash", "-c"]
 
-USER root
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt install -y unzip curl openssh-server wget git build-essential cmake aria2 ffmpeg libgl1 python3-venv 
+RUN apt-get install -y python3-pip
+RUN pip3 install --upgrade pip
+RUN pip3 install --no-cache pyyaml
+RUN apt-get clean autoclean
+RUN apt-get autoremove --yes
+RUN echo "Removing apt cache ..."
+RUN rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+COPY runner-scripts/.  /runner-scripts/
+COPY entrypoint.sh /entrypoint.sh
+
+COPY --from=models_path ./models/loras/SDXL/ /models/loras/SDXL/
+
+ENV USE_SDXL_MODELS="true"
+ENV USE_HV_MODELS="false"
+ENV USE_WAN_MODELS="false"
+ENV USE_FLUX_MODELS="false"
+
+
+# Final setup
 VOLUME /root
 WORKDIR /root
-
-COPY models/loras/SDXL/ /root/models/loras/SDXL/
-ENV USE_SDXL_MODELS=1
-
 EXPOSE 8188
 ENV CLI_ARGS=""
-CMD ["bash","/entrypoint.sh"]
+CMD ["bash", "/entrypoint.sh"]
