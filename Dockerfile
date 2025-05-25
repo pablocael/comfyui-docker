@@ -13,13 +13,16 @@ COPY entrypoint.sh /entrypoint.sh
 
 # ----- Model data stages -----
 FROM scratch AS hv_models
-COPY ./models/loras/HV/ /models/HV/
+COPY ./models/loras/HV/ /models/loras/HV/
 
 FROM scratch AS wan_models
-COPY ./models/loras/WAN/ /models/WAN/
+COPY ./models/loras/WAN/ /models/loras/WAN/
 
 FROM scratch AS sdxl_models
-COPY ./models/loras/SDXL/ /models/SDXL/
+COPY ./models/loras/SDXL/ /models/loras/SDXL/
+
+FROM scratch AS flux_models
+COPY ./models/loras/FLUX/ /models/loras/FLUX/
 
 # ----- Final stage -----
 FROM base AS final
@@ -27,22 +30,28 @@ FROM base AS final
 ARG use_hv_models=false
 ARG use_wan_models=false
 ARG use_sdxl_models=false
+ARG use_flux_models=false
 
 # Copy HV if needed
-COPY --from=hv_models /models/HV/ /models/loras/HV/
+COPY --from=hv_models /models/loras/HV/ /models/loras/HV/
 RUN if [ "$use_hv_models" != "true" ]; then rm -rf /models/loras/HV; fi
 
 # Copy WAN if needed
-COPY --from=wan_models /models/WAN/ /models/loras/WAN/
+COPY --from=wan_models /models/loras/WAN/ /models/loras/WAN/
 RUN if [ "$use_wan_models" != "true" ]; then rm -rf /models/loras/WAN; fi
 
 # Copy SDXL if needed
-COPY --from=sdxl_models /models/SDXL/ /models/loras/SDXL/
+COPY --from=sdxl_models /models/loras/SDXL/ /models/loras/SDXL/
 RUN if [ "$use_sdxl_models" != "true" ]; then rm -rf /models/loras/SDXL; fi
+
+# Copy FLUX if needed
+COPY --from=flux_models /models/loras/FLUX/ /models/loras/FLUX/
+RUN if [ "$use_flux_models" != "true" ]; then rm -rf /models/loras/FLUX; fi
 
 ENV USE_SDXL_MODELS=$use_sdxl_models
 ENV USE_HV_MODELS=$use_hv_models
 ENV USE_WAN_MODELS=$use_wan_models
+ENV USE_FLUX_MODELS=$use_flux_models
 
 
 # Final setup

@@ -72,10 +72,23 @@ if [ "$USE_SDXL_MODELS" == "true" ]; then
     mkdir -p /root/ComfyUI/models/checkpoints/SDXL/
     cd /root/ComfyUI/models/checkpoints/SDXL/
     download_if_missing "https://civitai.com/api/download/models/1526663?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=$CIVITAI_TOKEN" "pornmaster_asianSdxlV1VAE.safetensors"
-
+    download_if_missint "https://civitai.com/api/download/models/1678726?type=Model&format=SafeTensor&size=full&fp=fp32&token=$CIVITAI_TOKEN" "pornmaster_proSDXLV4VAE.safetensors"
+    download_if_missing "https://civitai.com/api/download/models/1308957?type=Model&format=SafeTensor&size=full&fp=fp32&token=$CIVITAI_TOKEN" "pornmaster_proSDXLV3VAE.safetensors"
+    download_if_missing "https://civitai.com/api/download/models/1081768?type=Model&format=SafeTensor&size=full&fp=fp16&token=$CIVITAI_TOKEN" "bigLust_v16.safetensors"
     echo "Copying SDXL Loras ..."
     cp -Rf /models/loras/SDXL/ /root/ComfyUI/models/loras/
 fi
+
+if [ "$USE_FLUX_MODELS" == "true" ]; then
+    echo "Downloading FLUX models ..."
+    mkdir -p /root/ComfyUI/models/checkpoints/FLUX/
+    cd /root/ComfyUI/models/checkpoints/FLUX/
+    download_if_missing "https://huggingface.co/XLabs-AI/flux-dev-fp8/resolve/main/flux-dev-fp8.safetensors"
+
+    echo "Copying FLUX Loras ..."
+    cp -Rf /models/loras/FLUX/ /root/ComfyUI/models/loras/
+fi
+
 
 echo "Downloading common clip models ..."
 cd /root/ComfyUI/models/clip/
