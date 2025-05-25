@@ -75,6 +75,8 @@ if [ "$USE_SDXL_MODELS" == "true" ]; then
     download_if_missint "https://civitai.com/api/download/models/1678726?type=Model&format=SafeTensor&size=full&fp=fp32&token=$CIVITAI_TOKEN" "pornmaster_proSDXLV4VAE.safetensors"
     download_if_missing "https://civitai.com/api/download/models/1308957?type=Model&format=SafeTensor&size=full&fp=fp32&token=$CIVITAI_TOKEN" "pornmaster_proSDXLV3VAE.safetensors"
     download_if_missing "https://civitai.com/api/download/models/1081768?type=Model&format=SafeTensor&size=full&fp=fp16&token=$CIVITAI_TOKEN" "bigLust_v16.safetensors"
+    download_if_missing "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors"
+
     echo "Copying SDXL Loras ..."
     cp -Rf /models/loras/SDXL/ /root/ComfyUI/models/loras/
 fi
@@ -96,7 +98,7 @@ download_if_missing "https://huggingface.co/calcuis/hunyuan-gguf/resolve/main/ll
 download_if_missing "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors"
 download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-fp8_e4m3fn.safetensors"
 download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-bf16.safetensors"
-download_if_missing "https://huggingface.co/city96/umt5-xxl-encoder-gguf/resolve/main/umt5-xxl-encoder-Q6_K.gguf" 
+download_if_missing "https://huggingface.co/city96/umt5-xxl-encoder-gguf/resolve/main/umt5-xxl-encoder-Q6_K.gguf"
 
 cd /root/ComfyUI/models/clip_vision/
 download_if_missing "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors"
