@@ -110,6 +110,10 @@ clone_or_pull https://github.com/willmiao/ComfyUI-Lora-Manager.git
 clone_or_pull https://github.com/welltop-cn/ComfyUI-TeaCache.git
 clone_or_pull https://github.com/kijai/ComfyUI-FramePackWrapper.git
 clone_or_pull https://github.com/orssorbit/ComfyUI-wanBlockswap.git
+clone_or_pull https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
+clone_or_pull https://github.com/Fannovel16/comfyui_controlnet_aux.git
+clone_or_pull https://github.com/shinich39/comfyui-get-meta.git
+clone_or_pull https://github.com/kijai/ComfyUI-DepthAnythingV2.git
 
 # GGUF support
 clone_or_pull https://github.com/city96/ComfyUI-GGUF.git

@@ -44,6 +44,7 @@ if [ "$USE_WAN_MODELS" == "true" ]; then
     mkdir -p /root/ComfyUI/models/diffusion_models/WAN/T2V
     cd /root/ComfyUI/models/diffusion_models/WAN/T2V
     download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-T2V-14B_CausVid_fp8_e4m3fn.safetensors"
+    download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-T2V-14B_fp8_e4m3fn.safetensors"
 
     echo "Downloading WAN T2V Video Models..."
     mkdir -p /root/ComfyUI/models/diffusion_models/WAN/T2V
@@ -52,7 +53,8 @@ if [ "$USE_WAN_MODELS" == "true" ]; then
     echo "Downloading WAN I2V Video Models..."
     mkdir -p /root/ComfyUI/models/diffusion_models/WAN/I2V
     cd /root/ComfyUI/models/diffusion_models/WAN/I2V
-    download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-T2V-14B_fp8_e4m3fn.safetensors"
+    download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-VACE_module_14B_fp8_e4m3fn.safetensors" 
+    download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-I2V-14B-720P_fp8_e4m3fn.safetensors"
 
     mkdir -p /root/ComfyUI/models/unet/WAN/I2V
     cd /root/ComfyUI/models/unet/WAN/I2V
