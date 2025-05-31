@@ -10,7 +10,7 @@ sdxl: prepare
 	docker build --build-context models_path=${HOME}/Dropbox/Files/ComfyUI -t pablocael/comfyui-sdxl:latest -f Dockerfile.sdxl .
 	$(cleanup)
 
-swan: prepare
+wan: prepare
 	@echo "Building WAN container..."
 	docker build --build-arg use_wan_models=true --build-context models_path=${HOME}/Dropbox//Files/ComfyUI -t pablocael/comfyui-wan:latest -f Dockerfile.wan .
 	$(cleanup)

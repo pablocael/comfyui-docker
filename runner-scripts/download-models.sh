@@ -13,6 +13,9 @@ download_if_missing() {
     fi
 }
 
+
+echo "Enabled model flags: $USE_HUNYUAN_MODELS=$USE_HUNYUAN_MODELS, USE_WAN_MODELS=$USE_WAN_MODELS, USE_SDXL_MODELS=$USE_SDXL_MODELS, USE_FLUX_MODELS=$USE_FLUX_MODELS"
+
 if [ "$USE_HUNYUAN_MODELS" == "true" ]; then
     echo "Downloading Hunyuan I2V Video Models..."
     mkdir -p /root/ComfyUI/models/diffusion_models/HV/I2V

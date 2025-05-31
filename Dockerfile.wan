@@ -15,15 +15,15 @@ RUN rm -rf /var/lib/{apt,dpkg,cache,log}/
 COPY runner-scripts/.  /runner-scripts/
 COPY entrypoint.sh /entrypoint.sh
 
-FROM scratch AS sdxl_models
-COPY --from=models_path ./models/loras/SDXL/ /models/loras/SDXL/
+FROM scratch AS wan_models
+COPY --from=models_path ./models/loras/WAN/ /models/loras/WAN/
 
 # ----- Final stage -----
 FROM base AS final
 
-ENV USE_SDXL_MODELS="true"
+ENV USE_SDXL_MODELS="false"
 ENV USE_HV_MODELS="false"
-ENV USE_WAN_MODELS="false"
+ENV USE_WAN_MODELS="true"
 ENV USE_FLUX_MODELS="false"
 
 
