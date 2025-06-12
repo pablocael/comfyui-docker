@@ -41,3 +41,6 @@ push:
 	docker tag pablocael/comfyui-$${name}:latest pablocael/comfyui-$${name}:latest
 	docker push pablocael/comfyui-$${name}:latest
 	@echo "Pushed container $${name}."
+
+run:
+	docker run --rm -it -d -v ${HOME}/comfyui-docker/storage:/root/ -p 8188:8188 -e CIVITAI_TOKEN=b3dda7cccbaac1dca0ac903c5279ec0a -e CLI_ARGS=" --disable-smart-memory --disable-auto-launch --port 8188 --enable-cors-header" --gpus all --name comfyui pablocael/comfyui-$${name}:latest

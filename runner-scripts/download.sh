@@ -25,7 +25,7 @@ source /root/python-env/bin/activate
 echo "########################################"
 echo "[INFO] Installing CUDA ..."
 echo "########################################"
-pip3 install --force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+# pip3 install --force-reinstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
 echo "########################################"
 echo "[INFO] Downloading ComfyUI ..."

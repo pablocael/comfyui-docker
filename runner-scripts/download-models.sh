@@ -14,7 +14,7 @@ download_if_missing() {
 }
 
 
-echo "Enabled model flags: $USE_HUNYUAN_MODELS=$USE_HUNYUAN_MODELS, USE_WAN_MODELS=$USE_WAN_MODELS, USE_SDXL_MODELS=$USE_SDXL_MODELS, USE_FLUX_MODELS=$USE_FLUX_MODELS"
+echo "Enabled model flags: USE_HUNYUAN_MODELS=$USE_HUNYUAN_MODELS, USE_WAN_MODELS=$USE_WAN_MODELS, USE_SDXL_MODELS=$USE_SDXL_MODELS, USE_FLUX_MODELS=$USE_FLUX_MODELS"
 
 if [ "$USE_HUNYUAN_MODELS" == "true" ]; then
     echo "Downloading Hunyuan I2V Video Models..."
@@ -99,11 +99,11 @@ fi
 
 echo "Downloading common clip models ..."
 cd /root/ComfyUI/models/clip/
-download_if_missing "https://huggingface.co/calcuis/hunyuan-gguf/resolve/main/llava_llama3_fp8_scaled.safetensors"
-download_if_missing "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors"
-download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-fp8_e4m3fn.safetensors"
-download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-bf16.safetensors"
-download_if_missing "https://huggingface.co/city96/umt5-xxl-encoder-gguf/resolve/main/umt5-xxl-encoder-Q6_K.gguf"
+download_if_missing "https://huggingface.co/calcuis/hunyuan-gguf/resolve/main/llava_llama3_fp8_scaled.safetensors" "llava_llama3_fp8_scaled.safetensors"
+download_if_missing "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors" "clip_l.safetensors"
+download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-fp8_e4m3fn.safetensors" "umt5-xxl-enc-fp8_e4m3fn.safetensors"
+download_if_missing "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-bf16.safetensors" "umt5-xxl-enc-bf16.safetensors"
+download_if_missing "https://huggingface.co/city96/umt5-xxl-encoder-gguf/resolve/main/umt5-xxl-encoder-Q6_K.gguf" "umt5-xxl-encoder-Q6_K.gguf"
 
 cd /root/ComfyUI/models/clip_vision/
 download_if_missing "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors"
