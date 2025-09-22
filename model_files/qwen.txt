@@ -1,0 +1,11 @@
+https://huggingface.co/f5aiteam/Diffusion_Models/resolve/main/qwen_image_fp8_e4m3fn.safetensors
+    dir=models/diffusion_models/
+    out=qwen_image_fp8_e4m3fn.safetensors
+
+https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors
+    dir=models/clip/
+    out=qwen_2.5_vl_7b_fp8_scaled.safetensors
+
+https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V1.1.safetensors
+    dir=models/loras/QWEN/
+    out=qwen-image-lightning-8steps-v1.1.safetensors

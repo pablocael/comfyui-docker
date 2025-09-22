@@ -1,0 +1,19 @@
+FROM pablocael/comfyui-base-12.9:latest
+SHELL ["/bin/bash", "-c"]
+
+COPY runner-scripts/.  /runner-scripts/
+COPY entrypoint.sh /entrypoint.sh
+COPY model_files/ /model_files/
+
+ENV USE_SDXL_MODELS="true"
+ENV USE_WAN_MODELS="true"
+ENV USE_QWEN_MODELS="true"
+ENV USE_FLUX_MODELS="false"
+ENV USE_HV_MODELS="false"
+
+# final setup
+VOLUME /root
+WORKDIR /root
+EXPOSE 8188
+ENV CLI_ARGS=""
+CMD ["bash", "/entrypoint.sh"]

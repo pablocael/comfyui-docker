@@ -1,0 +1,11 @@
+https://huggingface.co/datasets/Kizi-Art/Upscale/resolve/fa98e357882a23b8e7928957a39462fbfaee1af5/4x-UltraSharp.pth
+    dir=models/upscale_models/
+    out=4x_ultra_sharp.pth
+
+https://huggingface.co/RafaG/models-ESRGAN/resolve/82caaaedb2d27e9f76472351828178b62995c2f1/4xFaceUpLDAT.pth
+    dir=models/upscale_models/
+    out=4x_faceupldat.pth
+
+https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/1x-ITF-SkinDiffDetail-Lite-v1.pth
+    dir=models/upscale_models/
+    out=1x_itf-skindiffdetail_lite_v1.pth

@@ -1,0 +1,8 @@
+https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_I2V_720_fixed_fp8_e4m3fn.safetensors
+  dir=diffusion_models/HV10/I2V
+
+https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_720_fp8_e4m3fn.safetensors
+  dir=diffusion_models/HV10/T2V
+
+https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors
+  dir=vae/HV10/

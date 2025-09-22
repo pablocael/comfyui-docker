@@ -1,0 +1,64 @@
+https://huggingface.co/city96/Wan2.1-I2V-14B-720P-gguf/resolve/main/wan2.1-i2v-14b-720p-Q8_0.gguf
+    dir=models/unet/WAN21/I2V/
+    out=wan_21_i2v_720p_Q8_0.gguf
+
+https://huggingface.co/city96/Wan2.1-T2V-14B-gguf/resolve/main/wan2.1-t2v-14b-Q8_0.gguf
+    dir=models/unet/WAN21/T2V/
+    out=wan_21_t2v_Q8_0.gguf
+
+https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors
+    dir=models/vae/WAN21/
+    out=wan_21_vae.safetensors
+
+https://huggingface.co/Kijai/WanVideo_comfy_GGUF/resolve/main/InfiniteTalk/Wan2_1-InfiniteTalk_Single_Q8.gguf
+    dir=models/unet/WAN21
+    out=Wan21_infinitetalk_single_Q8.gguf
+
+https://huggingface.co/Serenak/chilloutmix/resolve/main/Wan2.1_I2V_14B_FusionX_LoRA.safetensors
+    dir=models/loras/WAN21/I2V/
+    out=Wan21_i2v_14B_fusionX.safetensors
+
+
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank256_bf16.safetensors
+    dir=models/loras/WAN21/I2V/
+    out=lightx2v_i2v_14B_480p_cfg_step_distill_rank256_bf16.safetensors
+
+https://huggingface.co/city96/umt5-xxl-encoder-gguf/resolve/main/umt5-xxl-encoder-Q8_0.gguf
+    dir=models/clip
+    out=umt5-xxl-encoder-Q8_0.gguf
+
+https://huggingface.co/bullerwins/Wan2.2-I2V-A14B-GGUF/resolve/main/wan2.2_i2v_high_noise_14B_Q8_0.gguf
+    dir=models/unet/WAN22/I2V/
+    out=wan22_i2v_high_14B_Q8_0.gguf
+
+https://huggingface.co/bullerwins/Wan2.2-I2V-A14B-GGUF/resolve/main/wan2.2_i2v_low_noise_14B_Q8_0.gguf
+    dir=models/unet/WAN22/I2V/
+    out=wan22_i2v_low_14B_Q8_0.gguf
+
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_I2V-A14B-4steps-lora_HIGH_fp16.safetensors
+    dir=models/loras/WAN22/I2V/
+    out=wan22_lightning_i2v_high_14B_4steps_lora_fp16.safetensors
+
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors
+    dir=models/loras/WAN22/I2V/
+    out=wan22_lightning_i2v_low_14B_4steps_lora_fp16.safetensors
+
+https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/HighNoise/Wan2.2-T2V-A14B-HighNoise-Q8_0.gguf
+    dir=models/unet/WAN22/T2V/
+    out=wan22_t2v_high_14B_Q8_0.gguf
+
+https://huggingface.co/QuantStack/Wan2.2-T2V-A14B-GGUF/resolve/main/LowNoise/Wan2.2-T2V-A14B-LowNoise-Q8_0.gguf
+    dir=models/unet/WAN22/T2V/
+    out=wan22_t2v_low_14B_Q8_0.gguf
+
+https://huggingface.co/QuantStack/Wan2.2-VACE-Fun-A14B-GGUF/resolve/main/HighNoise/Wan2.2-VACE-Fun-A14B-high-noise-Q8_0.gguf
+    dir=models/unet/WAN22/I2V/
+    out=wan22_VACE_fun_high_noise_14B_Q8_0.gguf
+
+https://huggingface.co/QuantStack/Wan2.2-VACE-Fun-A14B-GGUF/resolve/main/LowNoise/Wan2.2-VACE-Fun-A14B-low-noise-Q8_0.gguf
+    dir=models/unet/WAN22/I2V/
+    out=wan22_VACE_fun_low_noise_14B_Q8_0.gguf
+
+https://huggingface.co/QuantStack/Wan2.2-Animate-14B-GGUF/resolve/main/Wan2.2-Animate-14B-Q8_0.gguf
+    dir=models/unet/WAN22/I2V/
+    out=Wan22_animate_14B_Q8_0.gguf
