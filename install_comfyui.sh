@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 set -euox pipefail
@@ -22,6 +21,8 @@ function clone_or_pull () {
 
 python3 -m venv /root/python-env
 source /root/python-env/bin/activate
+pip3 install --upgrade pip
+pip3 install --no-cache pyyaml
 pip3 install --no-cache torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu129
 
 echo "########################################"

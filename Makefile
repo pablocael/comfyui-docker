@@ -1,35 +1,21 @@
 
-prepare:
-	echo "Preparing build context..."
+base:
+	@echo "Building BASE container..."
+	docker build -t pablocael/comfyui-base-12.9:latest -f Dockerfile.12.9.base .
+	$(cleanup)
 
 cleanup:
 	echo "Cleaning ..."
 
-sdxl: prepare
-	@echo "Building SDXL container..."
-	docker build --build-context models_path=${HOME}/Dropbox/Files/ComfyUI -t pablocael/comfyui-sdxl:latest -f Dockerfile.sdxl .
+qsw: base
+	@echo "Building QWEN SDXL WAN container..."
+	docker build -t pablocael/comfyui-qsw:latest -f Dockerfile.qwensdxlwan .
 	$(cleanup)
 
-wan: prepare
+wan: base
 	@echo "Building WAN container..."
-	docker build --build-arg use_wan_models=true --build-context models_path=${HOME}/Dropbox//Files/ComfyUI -t pablocael/comfyui-wan:latest -f Dockerfile.wan .
+	docker build -t pablocael/comfyui-wan:latest -f Dockerfile.wan .
 	$(cleanup)
-
-sdxl-wan: prepare
-	@echo "Building SDXL WAN container..."
-	docker build --build-context models_path=${HOME}/Dropbox/Files/ComfyUI -t pablocael/comfyui-sdxl-wan:latest -f Dockerfile.sdxlwan .
-	$(cleanup)
-
-hv: prepare
-	@echo "Building HUNYUAN container..."
-	docker build --build-context models_path=${HOME}/Dropbox/Files/ComfyUI -t pablocael/comfyui-hunyuan:latest -f Dockerfile.hv .
-	$(cleanup)
-
-flux: prepare
-	@echo "Building FLUX container..."
-	docker build --build-arg --build-context models_path=${HOME}/Dropbox/Files/ComfyUI -t pablocael/comfyui-flux:latest -f Dockerfile.flux .
-	$(cleanup)
-
 
 # push container based on name passed by argument
 # usage: make push name=container_name

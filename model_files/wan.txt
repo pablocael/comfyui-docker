@@ -14,7 +14,7 @@ https://huggingface.co/Kijai/WanVideo_comfy_GGUF/resolve/main/InfiniteTalk/Wan2_
     dir=models/unet/WAN21
     out=Wan21_infinitetalk_single_Q8.gguf
 
-https://huggingface.co/Serenak/chilloutmix/resolve/main/Wan2.1_I2V_14B_FusionX_LoRA.safetensors
+https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX/resolve/main/FusionX_LoRa/Wan2.1_I2V_14B_FusionX_LoRA.safetensors
     dir=models/loras/WAN21/I2V/
     out=Wan21_i2v_14B_fusionX.safetensors
 
