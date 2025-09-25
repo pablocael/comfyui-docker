@@ -13,3 +13,7 @@ https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lig
 https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors
     dir=models/vae/QWEN/
     out=qwen_image_vae.safetensors
+
+https://huggingface.co/QuantStack/Qwen-Image-Edit-2509-GGUF/resolve/main/Qwen-Image-Edit-2509-Q8_0.gguf
+    dir=models/unet/QWEN/
+    out=qwen_image_edit_2509_Q8_0.gguf

@@ -18,13 +18,12 @@ https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX/resolve/main/FusionX_Lo
     dir=models/loras/WAN21/I2V/
     out=Wan21_i2v_14B_fusionX.safetensors
 
-
 https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank256_bf16.safetensors
     dir=models/loras/WAN21/I2V/
     out=lightx2v_i2v_14B_480p_cfg_step_distill_rank256_bf16.safetensors
 
 https://huggingface.co/city96/umt5-xxl-encoder-gguf/resolve/main/umt5-xxl-encoder-Q8_0.gguf
-    dir=models/clip
+    dir=models/text_encoder
     out=umt5-xxl-encoder-Q8_0.gguf
 
 https://huggingface.co/bullerwins/Wan2.2-I2V-A14B-GGUF/resolve/main/wan2.2_i2v_high_noise_14B_Q8_0.gguf
@@ -62,3 +61,11 @@ https://huggingface.co/QuantStack/Wan2.2-VACE-Fun-A14B-GGUF/resolve/main/LowNois
 https://huggingface.co/QuantStack/Wan2.2-Animate-14B-GGUF/resolve/main/Wan2.2-Animate-14B-Q8_0.gguf
     dir=models/unet/WAN22/I2V/
     out=Wan22_animate_14B_Q8_0.gguf
+
+https://huggingface.co/Kijai/MelBandRoFormer_comfy/resolve/main/MelBandRoformer_fp32.safetensors
+    dir=models/diffusion_models/AUDIO/
+    out=melbandroformer_fp32.safetensors
+
+https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors
+    dir=models/clip_vision/
+    out=clip_vision_h.safetensors

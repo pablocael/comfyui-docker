@@ -7,7 +7,8 @@ function download_models_from_file () {
         echo "[ERROR] File not found: $1"
         return 1
     fi
-    aria2c -d /root/ComfyUI/ --max-concurrent-downloads=4 -c --auto-file-renaming=false --allow-overwrite=false --input-file=$1
+    cd /root/ComfyUI
+    aria2c -d . --max-concurrent-downloads=4 -c --auto-file-renaming=false --allow-overwrite=false --input-file=$1
 }
 
 if  [[ -v SKIP_MODEL_DOWNLOAD ]]; then

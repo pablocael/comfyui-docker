@@ -27,7 +27,8 @@ RUN apt update && apt install -y \
     && rm -rf /var/lib/{cache,log}/ \
     && rm -rf /var/cache/apt/archives/*.deb
 
-ENV USE_SDXL_MODELS="false" ENV USE_WAN_MODELS="false"
+ENV USE_SDXL_MODELS="false" 
+ENV USE_WAN_MODELS="false"
 ENV USE_QWEN_MODELS="false"
 ENV USE_FLUX_MODELS="false"
 ENV USE_HV_MODELS="false"
