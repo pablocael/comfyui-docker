@@ -34,11 +34,11 @@ https://huggingface.co/bullerwins/Wan2.2-I2V-A14B-GGUF/resolve/main/wan2.2_i2v_l
     dir=models/unet/WAN22/I2V/
     out=wan22_i2v_low_14B_Q8_0.gguf
 
-https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_I2V-A14B-4steps-lora_HIGH_fp16.safetensors
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22-Lightning/Wan22_A14B_T2V_HIGH_Lightning_4steps_lora_250928_rank128_fp16.safetensors
     dir=models/loras/WAN22/I2V/
     out=wan22_lightning_i2v_high_14B_4steps_lora_fp16.safetensors
 
-https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22-Lightning/Wan22_A14B_T2V_LOW_Lightning_4steps_lora_250928_rank64_fp16.safetensors
     dir=models/loras/WAN22/I2V/
     out=wan22_lightning_i2v_low_14B_4steps_lora_fp16.safetensors
 

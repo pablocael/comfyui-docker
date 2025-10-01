@@ -1,4 +1,4 @@
-FROM pablocael/comfyui-base-12.9:latest
+FROM pablocael/comfyui-base-13.1:latest
 SHELL ["/bin/bash", "-c"]
 
 COPY runner-scripts/.  /runner-scripts/

@@ -1,7 +1,7 @@
 
 base:
 	@echo "Building BASE container..."
-	docker build -t pablocael/comfyui-base-12.9:latest -f Dockerfile.12.9.base .
+	docker build -t pablocael/comfyui-base-13.1:latest -f Dockerfile.13.1.base .
 	$(cleanup)
 
 cleanup:
