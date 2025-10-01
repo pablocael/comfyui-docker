@@ -9,3 +9,7 @@ https://huggingface.co/RafaG/models-ESRGAN/resolve/82caaaedb2d27e9f7647235182817
 https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/1x-ITF-SkinDiffDetail-Lite-v1.pth
     dir=models/upscale_models/
     out=1x_itf-skindiffdetail_lite_v1.pth
+
+https://huggingface.co/Phips/4xNomos8kDAT/resolve/main/4xNomos8kDAT.safetensors
+    dir=models/upscale_models/
+    out=4x_nomos8kdat.safetensors

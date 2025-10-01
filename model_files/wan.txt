@@ -14,6 +14,11 @@ https://huggingface.co/Kijai/WanVideo_comfy_GGUF/resolve/main/InfiniteTalk/Wan2_
     dir=models/unet/WAN21
     out=Wan21_infinitetalk_single_Q8.gguf
 
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/InfiniteTalk/Wan2_1-InfiniTetalk-Single_fp16.safetensors?download=true
+    dir=models/unet/WAN21
+    out=Wan21_infinitetalk_single_fp16.safetensors
+
+
 https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX/resolve/main/FusionX_LoRa/Wan2.1_I2V_14B_FusionX_LoRA.safetensors
     dir=models/loras/WAN21/I2V/
     out=Wan21_i2v_14B_fusionX.safetensors
@@ -69,6 +74,11 @@ https://huggingface.co/QuantStack/Wan2.2-Animate-14B-GGUF/resolve/main/Wan2.2-An
 https://huggingface.co/Kijai/MelBandRoFormer_comfy/resolve/main/MelBandRoformer_fp32.safetensors
     dir=models/diffusion_models/AUDIO/
     out=melbandroformer_fp32.safetensors
+
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-I2V-14B-720P_fp8_e4m3fn.safetensors
+    dir=models/unet/WAN21/I2V/
+    out=wan_21_i2v_720p_fp8_e4m3fn.safetensors
+
 
 https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors
     dir=models/clip_vision/
