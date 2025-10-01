@@ -23,8 +23,12 @@ https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_1
     out=lightx2v_i2v_14B_480p_cfg_step_distill_rank256_bf16.safetensors
 
 https://huggingface.co/city96/umt5-xxl-encoder-gguf/resolve/main/umt5-xxl-encoder-Q8_0.gguf
-    dir=models/text_encoder
+    dir=models/text_encoders/
     out=umt5-xxl-encoder-Q8_0.gguf
+
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-bf16.safetensors
+    dir=models/text_encoders/
+    out=umt5-xxl-enc-bf16.safetensors
 
 https://huggingface.co/bullerwins/Wan2.2-I2V-A14B-GGUF/resolve/main/wan2.2_i2v_high_noise_14B_Q8_0.gguf
     dir=models/unet/WAN22/I2V/
