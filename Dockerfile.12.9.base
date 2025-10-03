@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.9.1-cudnn-runtime-ubuntu24.04
+FROM nvidia/cuda:12.9.0-cudnn-runtime-ubuntu24.04
 USER root
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -21,6 +21,7 @@ RUN apt update && apt install -y \
     tmux \
     python3-venv \
     python3-pip \
+    gettext \
     && apt-get clean autoclean \
     && apt-get autoremove --yes \
     && rm -rf /var/lib/apt/lists/* \
@@ -30,8 +31,6 @@ RUN apt update && apt install -y \
 ENV USE_SDXL_MODELS="false" 
 ENV USE_WAN_MODELS="false"
 ENV USE_QWEN_MODELS="false"
-ENV USE_FLUX_MODELS="false"
-ENV USE_HV_MODELS="false"
 
 WORKDIR /root
 
@@ -136,7 +135,9 @@ RUN git clone https://github.com/cubiq/ComfyUI_FaceAnalysis.git && \
     git clone https://github.com/kijai/ComfyUI-WanVideoWrapper.git && \
     git clone https://github.com/christian-byrne/audio-separation-nodes-comfyui.git && \
     git clone https://github.com/SeanScripts/ComfyUI-Unload-Model.git && \
-    git clone https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel.git
+    git clone https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel.git && \
+    git clone https://github.com/chflame163/ComfyUI_LayerStyle_Advance.git && \
+    git clone https://github.com/JPS-GER/ComfyUI_JPS-Nodes.git
 
 # GGUF support
 RUN git clone https://github.com/city96/ComfyUI-GGUF.git

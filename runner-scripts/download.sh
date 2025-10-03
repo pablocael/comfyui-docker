@@ -20,26 +20,31 @@ else
     # Downloading models
     if [[ -v USE_WAN_MODELS ]]; then
         echo "Downloading WAN models ..."
-        download_models_from_file /model_files/wan.txt 
+        envsubst < /model_files/wan.txt > /model_files/wan_expanded.txt
+        download_models_from_file /model_files/wan_expanded.txt
     fi
 
     if [[ -v USE_HUNYUAN_MODELS ]]; then
         echo "Downloading HV models ..."
-        download_models_from_file /model_files/hv.txt
+        envsubst < /model_files/hv.txt > /model_files/hv_expanded.txt
+        download_models_from_file /model_files/hv_expanded.txt
     fi
 
     if [[ -v USE_SDXL_MODELS ]]; then
         echo "Downloading SDXL models ..."
-        download_models_from_file /model_files/sdxl.txt
+        envsubst < /model_files/sdxl.txt > /model_files/sdxl_expanded.txt
+        download_models_from_file /model_files/sdxl_expanded.txt
     fi
 
     if [[ -v USE_QWEN_MODELS ]]; then
         echo "Downloading QWEN models ..."
-        download_models_from_file /model_files/qwen.txt
+        envsubst < /model_files/qwen.txt > /model_files/qwen_expanded.txt
+        download_models_from_file /model_files/qwen_expanded.txt
     fi
 
     echo "Downloading upscale models ..."
-    download_models_from_file /model_files/upscale.txt
+    envsubst < /model_files/upscale.txt > /model_files/upscale_expanded.txt
+    download_models_from_file /model_files/upscale_expanded.txt
     # Finish
     touch /root/.download-complete
 fi

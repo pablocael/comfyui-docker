@@ -1,0 +1,23 @@
+https://huggingface.co/Kuvshin/models-moved/resolve/main/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+    dir=models/clip_vision/SDXL/
+    out=clip_vit_h_14_laion2b_s32b_b79k.safetensors
+
+https://civitai.com/api/download/models/2043971?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=${CIVITAI_TOKEN}
+    dir=models/diffusion_models/SDXL/
+    out=sdxl_pornmaster_prosdxl_v7.safetensors
+
+https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors
+    dir=models/controlnet/SDXL/
+    out=controlnet_union_sdxl_1.0.safetensors
+
+https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl.bin
+    dir=models/ipadapter/
+    out=ip-adapter-faceid-plusv2_sdxl.safetensors
+
+https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl_lora.safetensors
+    dir=models/loras/
+    out=ip-adapter-faceid-plusv2_sdxl_lora.safetensors
+
+https://huggingface.co/ezioruan/inswapper_128.onnx/resolve/main/inswapper_128.onnx
+    dir=models/onnx/
+    out=inswapper_128.onnx
