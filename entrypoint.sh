@@ -42,5 +42,19 @@ echo "########################################"
 echo "[INFO] Starting ComfyUI..."
 echo "########################################"
 
+
+mkdir -p /run/sshd && chmod 0755 /run/sshd
+
+# --- Enable SSH ---
+mkdir -p /run/sshd && \
+    ssh-keygen -A && \
+    sed -i 's/^#\?Port .*/Port 122/' /etc/ssh/sshd_config && \
+    sed -i 's/^#\?PasswordAuthentication .*/PasswordAuthentication no/' /etc/ssh/sshd_config && \
+    sed -i 's/^#\?PubkeyAuthentication .*/PubkeyAuthentication yes/' /etc/ssh/sshd_config && \
+    sed -i 's/^#\?PermitRootLogin .*/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
+
+/usr/sbin/sshd -p 122 &
+echo "[INFO] SSHD started on port 122"
+
 cd /root
 python3 ./ComfyUI/main.py --listen --port 8188 ${CLI_ARGS}

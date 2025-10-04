@@ -83,3 +83,8 @@ https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1-I2V-14B-720P_fp8
 https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors
     dir=models/clip_vision/
     out=clip_vision_h.safetensors
+
+
+https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX/resolve/main/Wan14Bi2vFusioniX_fp16.safetensors
+    dir=models/diffusion_models/WAN21/I2V/
+    out=wan_21_i2v_14B_fusionX_fp16.safetensors
