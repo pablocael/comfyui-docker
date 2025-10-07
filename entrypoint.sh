@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 python3 -m venv /root/python-env
 source /root/python-env/bin/activate
 
@@ -53,7 +51,7 @@ mkdir -p /run/sshd && \
     sed -i 's/^#\?PubkeyAuthentication .*/PubkeyAuthentication yes/' /etc/ssh/sshd_config && \
     sed -i 's/^#\?PermitRootLogin .*/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
 
-/usr/sbin/sshd -p 122 &
+/usr/sbin/sshd -D -p 122 &
 echo "[INFO] SSHD started on port 122"
 
 cd /root
