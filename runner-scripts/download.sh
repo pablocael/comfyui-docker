@@ -2,6 +2,8 @@
 
 set -eox pipefail
 
+echo "Using CIVITAI Token: ${CIVITAI_TOKEN:0:4}****"
+
 function download_models_from_file () {
     if [ ! -f "$1" ]; then
         echo "[ERROR] File not found: $1"
@@ -13,7 +15,7 @@ function download_models_from_file () {
 
 echo "Using CIVITAI Token: ${CIVITAI_TOKEN:0:4}****"
 
-if  [[ -v SKIP_MODEL_DOWNLOAD ]]; then
+if  [[ SKIP_MODEL_DOWNLOAD -eq "1"  ]]; then
     echo "Skipping model download ..."
 else
     echo "########################################"
