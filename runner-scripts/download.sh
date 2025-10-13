@@ -57,6 +57,13 @@ else
     echo "########################################"
     CIVITAI_TOKEN=$CIVITAI_TOKEN envsubst < /model_files/upscale.txt > /model_files/upscale_expanded.txt
     download_models_from_file /model_files/upscale_expanded.txt
+
+    echo "########################################"
+    echo "Downloading OTHER models ..."
+    echo "########################################"
+    # other models
+    CIVITAI_TOKEN=$CIVITAI_TOKEN envsubst < /model_files/others.txt > /model_files/others_expanded.txt
+    download_models_from_file /model_files/others_expanded.txt
     # Finish
     touch /root/.download-complete
 fi

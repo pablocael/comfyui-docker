@@ -1,0 +1,7 @@
+https://huggingface.co/fofr/comfyui/resolve/76574336fbb61a96825dbe0b41bda2f2ec214084/ultralytics/bbox/face_yolov8m.pt
+   dir=models/Ultralytics/bbox/
+   out=face_yolov8m.pt
+
+https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/sams/sam_vit_b_01ec64.pth
+    dir=models/sams/
+    out=sam_vit_b_01ec64.pth
