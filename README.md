@@ -94,6 +94,24 @@ PUBLIC_KEY_PATH=${HOME}/.ssh/id_ed25519.pub DOCKERHUB_USERNAME=my_username make 
 
 Now you can access your container using ssh or rsync without password. The ssh server is already installed.
 
+When running the container on runpod or vast.ai, prefer a direct pod access using public ip, rather than using the http tunneling they provide, as it is much faster.
+This is how you tunnel your local port comfyui port to the remote port port of the container:
+
+```bash
+ssh -i ~/.ssh/id_ed25519 -L 8188:localhost:8188 root@<your_pod_public_ip>
+```
+
+(If you set up your public key as explained above all should work without password)
+
+You can check your pod public ip in runpod or vast.ai dashboard.
+
+Then you can access comfyui in your local browser at `http://localhost:8188`
+
+This is faster than using the http tunneling they provide.
+
+Then you can access your container using:
+```bash
+
 ## Running the container locally
 
 This repo provides a Makefile to make it easier to build, push and run the docker image.
