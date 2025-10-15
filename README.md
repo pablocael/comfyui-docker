@@ -90,7 +90,7 @@ Example:
 PUBLIC_KEY_PATH=${HOME}/.ssh/id_ed25519.pub DOCKERHUB_USERNAME=my_username make build
 ```
 
-* THE CONTAINER WILL EXPOSE SSH THROUGH PORT 122, not the default 22. This will be automatically exposed, but you need to specify 122 port when using services like runpod or vast.ai (see next sessions)_template.
+* THE CONTAINER WILL EXPOSE SSH THROUGH PORT 122, not the default 22. This will be automatically exposed, but you need to specify 122 port when using services like runpod or vast.ai (see next sessions).
 
 Now you can access your container using ssh or rsync without password. The ssh server is already installed.
 
