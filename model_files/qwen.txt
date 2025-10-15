@@ -38,6 +38,6 @@ https://huggingface.co/Comfy-Org/Qwen-Image-InstantX-ControlNets/resolve/main/sp
     dir=models/controlnet/QWEN/
     out=qwen-image-instantx-controlnet-union.safetensors
 
-https://civitai.com/api/download/models/2106185?type=Model&format=SafeTensors&token=${CIVITAI_TOKEN}
+https://civitai.com/api/download/models/2106185?type=Model&format=SafeTensor&token=${CIVITAI_TOKEN}
     dir=models/loras/
     out=lenovo.safetensors

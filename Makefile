@@ -1,7 +1,11 @@
+# Global variable
+# Docker Hub username
+DOCKERHUB_USERNAME := pablocael
+PUBLIC_KEY_PATH := ${HOME}/.ssh/id_ed25519.pub
 
 base:
 	@echo "Building BASE container..."
-	docker build --secret id=publickey,src=${HOME}/.ssh/id_ed25519.pub -t pablocael/comfyui-base:latest -f Dockerfile.base .
+	docker build --secret id=publickey,src=${PUBLIC_KEY_PATH} -t ${DOCKERHUB_USERNAME}/comfyui-base:latest -f Dockerfile.base .
 	$(cleanup)
 
 cleanup:
@@ -9,7 +13,7 @@ cleanup:
 
 build: base
 	export DOCKER_BUILDKIT=1
-	docker build -t pablocael/comfyui:latest -f Dockerfile .
+	docker build -t ${DOCKERHUB_USERNAME}/comfyui:latest -f Dockerfile .
 	$(cleanup)
 
 
@@ -17,7 +21,7 @@ build: base
 # usage: make push name=container_name
 .PHONY push:
 push:
-	docker push pablocael/comfyui:latest
+	docker push ${DOCKERHUB_USERNAME}/comfyui:latest
 
 run:	
-	docker run --rm -it -v /mnt/data-server/comfy-models/:/root/ComfyUI/models/ -p 8188:8188 -e CIVITAI_TOKEN=b3dda7cccbaac1dca0ac903c5279ec0a --gpus all --name comfyui pablocael/comfyui:latest
+	docker run --rm -it -v /mnt/data-server/comfy-models/:/root/ComfyUI/models/ -p 8188:8188 -e CIVITAI_TOKEN=${CIVITAI_TOKEN} --gpus all --name comfyui ${DOCKERHUB_USERNAME}/comfyui:latest
