@@ -51,7 +51,7 @@ This docker is a convenient way of using your comfyui with your custom models an
     - extra_loras.txt: for any other loras you need
 
     You dont need to put any model in those files if you dont want. You can keep the default or you can just remove all models from it.
-    By default there are lots of models in those files. You can remove the ones you don't need or create your own file with only the models you want.
+
     You can also DISABLE sdxl, qwen, hv or wan by setting the env vars to the docker image when running.
     ```bash
 
