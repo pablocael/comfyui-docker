@@ -7,7 +7,7 @@ This docker is a convenient way of using your comfyui with your custom models an
 
 ## How to use it
 
-1) The following environment variables are available to configure docker image build and run (will be explained bettwer later):
+1) The following environment variables are available to configure docker image build and run (will be explained better later):
 
 - Docker build time variables:
 
@@ -140,6 +140,8 @@ CIVITAI_TOKEN=my_token DOCKERHUB_USERNAME=my_username make run
 For creating runpod template, set the following variables:
 
 ![runpod](docs/runpod_template.png)
+
+Also remember configuring your docker repo credentials to allow runpod to pull it.
 
 
 
