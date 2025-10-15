@@ -63,6 +63,7 @@ This docker is a convenient way of using your comfyui with your custom models an
     - `USE_HV_MODELS={0,1}` to disable/enable hunyuan video models
     - `USE_QWEN_MODELS={0,1}` to disable/enable qwen models
     - `USE_SDXL_MODELS={0,1}` to disable/enable sdxl models
+    - `USE_WAN_MODELS={0,1}` to disable/enable sdxl models
 
     For downloading civitai models, you need to set it with `&token=...` in the url within the model txt file, like this:
 
